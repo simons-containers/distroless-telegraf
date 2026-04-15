@@ -6,7 +6,7 @@ ARG TELEGRAF_RELEASE=https://dl.influxdata.com/telegraf/releases/telegraf-${TELE
 WORKDIR /extract/telegraf
 RUN curl --silent --show-error --location --output telegraf.tar.gz \
   "${TELEGRAF_RELEASE}" \
-  && tar xf telegraf.tar.gz --strip-components=1
+  && tar xf telegraf.tar.gz --strip-components=2
 
 FROM scratch
 ARG TELEGRAF_VERSION
