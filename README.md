@@ -1,3 +1,5 @@
+[![Current Version](https://raw.githubusercontent.com/simons-containers/distroless-telegraf/badges/.badges/main/release.svg)](https://github.com/simons-containers/distroless-telegraf/pkgs/container/distroless-telegraf) [![Tags](https://raw.githubusercontent.com/simons-containers/distroless-telegraf/badges/.badges/main/tags.svg)](https://github.com/simons-containers/distroless-telegraf/pkgs/container/distroless-telegraf) <br> ![Current Size](https://raw.githubusercontent.com/simons-containers/distroless-telegraf/badges/.badges/main/size.svg) ![Wasted Size](https://raw.githubusercontent.com/simons-containers/distroless-telegraf/badges/.badges/main/wasted.svg) ![Efficiency](https://raw.githubusercontent.com/simons-containers/distroless-telegraf/badges/.badges/main/efficiency.svg) <br> ![Critical](https://raw.githubusercontent.com/simons-containers/distroless-telegraf/badges/.badges/main/critical.svg) ![High](https://raw.githubusercontent.com/simons-containers/distroless-telegraf/badges/.badges/main/high.svg) ![Medium](https://raw.githubusercontent.com/simons-containers/distroless-telegraf/badges/.badges/main/medium.svg) ![Low](https://raw.githubusercontent.com/simons-containers/distroless-telegraf/badges/.badges/main/low.svg) <br> [![Publish Workflow](https://img.shields.io/github/actions/workflow/status/simons-containers/distroless-telegraf/deploy.yaml?label=Publish%20Workflow&logo=github)](https://github.com/simons-containers/distroless-telegraf/actions/workflows/deploy.yaml) [![Update Workflow](https://img.shields.io/github/actions/workflow/status/simons-containers/distroless-telegraf/update-versions.yaml?label=Update%20Workflow&logo=github)](https://github.com/simons-containers/distroless-telegraf/actions/workflows/update-versions.yaml)
+
 # Distroless Telegraf container
 
 Bare-bones distroless Telegraf container image.
@@ -12,20 +14,6 @@ Example:
 docker run -it --rm \
   -v telegraf.conf:/etc/telegraf/telegraf.conf \
   ghcr.io/simons-containers/distroless-telegraf:latest
-```
-
-## Building
-
-| Arg | Description |
-|---|---|
-| `TELEGRAF_VERSION` | Version of Telegraf to use
-
-Build container using build-args from versions.yaml:
-
-```bash
-docker build -t \
-  distroless-telegraf:$(yq -r .telegraf versions.yaml) \
-  $(yq -r 'to_entries | .[] | "--build-arg \(.key | ascii_upcase)_VERSION=\(.value)"' versions.yaml) -f Containerfile .
 ```
 
 ## License
