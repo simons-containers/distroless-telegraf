@@ -1,0 +1,3 @@
+ignore:
+  # telegraf uses rclone as an output only, does not use rc-serve
+  - vulnerability: GHSA-qw24-gh76-8rvv
