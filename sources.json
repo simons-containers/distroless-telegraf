@@ -1,6 +1,6 @@
 {
   "telegraf": {
-    "version": "1.39.2",
+    "version": "1.39.3",
     "purl": "pkg:generic/telegraf",
     "release": {
       "url_pattern": "https://dl.influxdata.com/telegraf/releases/telegraf-{version}_linux_amd64.tar.gz"
